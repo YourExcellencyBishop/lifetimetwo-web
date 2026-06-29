@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "LifeTimeTwoGame.Web",
   "resources": {
-    "hash": "sha256-ZR72p9+njO2JD8IMKis5c0bXrgpCpkrO13HzTcV1FTA=",
+    "hash": "sha256-zYEnApFK9pv5LuJBAO71AEz7ByvULJSmiUIzOputcVQ=",
     "jsModuleNative": {
       "dotnet.native.js": "sha256-YDHEHpc+/PUWFYa9BMCN3EcVlpemjKD024swcpPfMIQ="
     },
@@ -18,8 +18,8 @@
     },
     "coreAssembly": {},
     "assembly": {
-      "LifeTimeTwoGame.Web.wasm": "sha256-8VeTL6dvwE797q1e4+3e1VIBz1dcgV4YUKVm1blzb9c=",
-      "LifeTimeTwoGame.wasm": "sha256-agKPyJVMrVWj/9+ovAFHjFgHmms1DzdyQGIkpReZuGQ=",
+      "LifeTimeTwoGame.Web.wasm": "sha256-nyi5ZVar/9z06fzr3x0ngCo/zQSmzcx03fwyZz2mXiM=",
+      "LifeTimeTwoGame.wasm": "sha256-gvXVOHNM0Q5G8g1zlgSl/JSHSPlYC6gyi4KgBxeUUbw=",
       "System.Collections.wasm": "sha256-caMXcBgKN9P7vISzS+N0qAnMPet4QTXnwnOHaJpkzLw=",
       "System.Console.wasm": "sha256-yYSespiwfBQaNOWaeCfGjvA0JZ5LVUGFjCZJGgGLSbY=",
       "System.Linq.wasm": "sha256-yRUhrjOaQcXV7JZ3OYpwZi6zOl3UDiBNiP5A1n5my2Y=",
