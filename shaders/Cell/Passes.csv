@@ -1,0 +1,3 @@
+MembraneOuter: MembraneVS, MembranePS
+InnerMembrane: MembraneLineVS, MembraneLinePS
+Cytoplasm: CytoplasmVS, CytoplasmPS

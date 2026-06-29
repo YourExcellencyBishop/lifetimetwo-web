@@ -1,0 +1,14 @@
+/* 1. Define and load the custom font file */
+@font-face {
+    font-family: 'MyCustomFont';
+    src: url('fonts/PIXELADE.TTF') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* 2. Apply the custom font to your HTML elements */
+body {
+    font-family: 'MyCustomFont', sans-serif;
+    font-size: 2.5rem
+}
