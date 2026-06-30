@@ -1,4 +1,4 @@
-/** @type {WebGLRenderingContext} */
+﻿/** @type {WebGLRenderingContext} */
 let gl = null;
 /** @type {HTMLCanvasElement} */
 let canvas = null;
@@ -44,6 +44,64 @@ window.addEventListener("keydown", event =>
 window.addEventListener("keyup", event => {
     currKeys.delete(MonoGameKeys[event.code]);
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const container = document.getElementById("canvas-container");
+    const btn = document.getElementById("fullscreenBtn");
+
+    const ENTER_ICON = "⛶"; // enter fullscreen
+    const EXIT_ICON = "🗗"; // exit fullscreen (or 🡼 if you prefer)
+
+    function updateIcon() {
+        const isFullscreen = !!document.fullscreenElement;
+        btn.textContent = isFullscreen ? EXIT_ICON : ENTER_ICON;
+    }
+
+    async function toggleFullscreen() {
+        if (!document.fullscreenElement) {
+            await container.requestFullscreen();
+            resizeFullscreen();
+        } else {
+            await document.exitFullscreen();
+            resizeWindowed();
+        }
+    }
+
+    // Button click
+    btn.addEventListener("click", toggleFullscreen);
+
+    // Keep icon in sync even if fullscreen changes externally (Esc, browser UI)
+    document.addEventListener("fullscreenchange", () => {
+        updateIcon();
+
+        if (document.fullscreenElement) {
+            resizeFullscreen();
+        } else {
+            resizeWindowed();
+        }
+    });
+
+    // F11 handling (override browser fullscreen)
+    window.addEventListener("keydown", (e) => {
+        if (e.code === "F11") {
+            e.preventDefault(); // stop browser fullscreen
+            toggleFullscreen();
+        }
+    });
+
+    updateIcon(); // initial state
+});
+
+function resizeForFullscreen() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    gl.viewport(0, 0, canvas.width, canvas.height);
+}
+
+function resizeForWindowed() {
+    resizeCanvasToDisplaySize(canvas);
+    gl.viewport(0, 0, canvas.width, canvas.height);
+}
 
 let exportsReady = false;
 let exports;
