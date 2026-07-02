@@ -1,70 +1,22 @@
-﻿/* 1. Define and load the custom font file */
-@font-face {
-    font-family: 'MyCustomFont';
-    src: url('fonts/PIXELADE.TTF') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
-
-/* 2. Apply the custom font to your HTML elements */
-body {
-    font-family: 'MyCustomFont', sans-serif;
-    font-size: 2.5rem;
-    margin: 0;
-    padding: 2.5vh 20vh;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column; /* 👈 THIS */
-    align-items: center; /* horizontal center */
-}
-
-#canvas-container {
-    position: relative;
-    display: inline-block;
-    /* Curved shape */
-    border-radius: 24px;
-    overflow: hidden; /* 👈 clips canvas to curve */
-    /* Border */
-    border: 4px solid rgba(255, 255, 255, 0.85);
-    /* Soft glow */
-    box-shadow: 0 0 25px rgba(255, 255, 255, 0.25), 0 10px 40px rgba(0, 0, 0, 0.6);
-    background: black; /* safety */
-}
-
-#canvas-container:fullscreen {
-    border: none;
-    box-shadow: none;
-    border-radius: 0;
-}
-
-#gameCanvas {
-    display: block;
-    width: 100%;
+﻿canvas {
+    width: 80%;
     height: auto;
+    max-width: 1920px;
+    max-height: 1080px;
+    display: block;
+    border: 4px solid rgba(255, 255, 255, 0.85);
+    border-radius: 25px;
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.25), 0 10px 40px rgba(0, 0, 0, 0.6);
 }
 
-/* Fullscreen button overlay */
-#fullscreenBtn {
-    position: absolute;
-    top: 8px;
-    right: 8px;
-    z-index: 10;
-    padding: 8px 12px;
-    font-size: 18px;
-    cursor: pointer;
-    background: rgba(0, 0, 0, 0.6);
-    color: white;
-    border: 1px solid white;
-    border-radius: 4px;
-}
-
-/* Remove scrollbars in fullscreen */
-:fullscreen {
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #111;
     overflow: hidden;
-}
-
-:fullscreen #canvas-container {
-    border-radius: 12px;
-    border-width: 3px;
 }
